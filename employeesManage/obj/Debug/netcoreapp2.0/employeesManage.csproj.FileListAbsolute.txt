@@ -1,0 +1,11 @@
+I:\employeesManage\employeesManage\bin\Debug\netcoreapp2.0\employeesManage.deps.json
+I:\employeesManage\employeesManage\bin\Debug\netcoreapp2.0\employeesManage.runtimeconfig.json
+I:\employeesManage\employeesManage\bin\Debug\netcoreapp2.0\employeesManage.runtimeconfig.dev.json
+I:\employeesManage\employeesManage\bin\Debug\netcoreapp2.0\employeesManage.dll
+I:\employeesManage\employeesManage\bin\Debug\netcoreapp2.0\employeesManage.pdb
+I:\employeesManage\employeesManage\obj\Debug\netcoreapp2.0\employeesManage.csprojAssemblyReference.cache
+I:\employeesManage\employeesManage\obj\Debug\netcoreapp2.0\employeesManage.csproj.CoreCompileInputs.cache
+I:\employeesManage\employeesManage\obj\Debug\netcoreapp2.0\employeesManage.AssemblyInfoInputs.cache
+I:\employeesManage\employeesManage\obj\Debug\netcoreapp2.0\employeesManage.AssemblyInfo.cs
+I:\employeesManage\employeesManage\obj\Debug\netcoreapp2.0\employeesManage.dll
+I:\employeesManage\employeesManage\obj\Debug\netcoreapp2.0\employeesManage.pdb

@@ -1,0 +1,88 @@
+<div class="container">
+  <h1>Employees List</h1>
+  <input type="button" value="Add Employee" class="btn btn-default" (click)="add()" />
+  <div *ngIf="tableMode" class="form-group d-flex flex-row-reverse">
+    <div ngbDropdown class="col-sx-4" id="dropdown">
+      <button class="btn" id="dropdownBasic1" ngbDropdownToggle>Parameter</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <a class="dropdown-item" (click)="changeCriteria('name')">Name</a>
+        <a class="dropdown-item" (click)="changeCriteria('position')">Position</a>
+        <a class="dropdown-item" (click)="changeCriteria('age')">Age</a>
+      </div>
+    </div>
+    <div class="col-sx-8">
+      <input type="text" placeholder="Filter by {{searchField}}" class="form-control" name="searchText" [(ngModel)]="searchText" />
+    </div>
+    </div>
+  <div class="dropdown">
+  </div>
+  <table *ngIf="tableMode; else create" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Position</td>
+        <td>Age </td>
+        <td>Start Date </td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of employees | searchByName:searchText:searchField">
+        <ng-template [ngIf]="employee?.id != e.id" [ngIfElse]="edit">
+          <td>{{e?.name}}</td>
+          <td>{{e?.position}}</td>
+          <td>{{e?.age}}</td>
+          <td>{{e?.startDate | date:'dd.MM.yyyy'}}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" (click)="editProduct(e)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="delete(e)">Delete</button>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #edit>
+    <td>
+      <input type="text" [(ngModel)]="employee.name" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="employee.position" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="employee.age" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="employee.startDate" class="form-control" />
+    </td>
+    <td>
+      <input type="button" value="Save" (click)="save()" class="btn btn-sm btn-success" />
+      <input type="button" value="Cancel" (click)="cancel()" class="btn btn-sm btn-warning" />
+    </td>
+  </ng-template>
+
+  <ng-template #create>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="employee.name" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Position</label>
+      <input type="text" [(ngModel)]="employee.position" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input type="text" [(ngModel)]="employee.age" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Start Date</label>
+      <input class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" [(ngModel)]="employee.startDate" type="date" />
+    </div>
+    <div>
+      <input type="button" value="Сохранить" (click)="save()" class="btn btn-success" />
+      <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+    </div>
+  </ng-template>
+</div>
+
